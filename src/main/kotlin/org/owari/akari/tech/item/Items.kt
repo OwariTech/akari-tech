@@ -1,7 +1,7 @@
 package org.owari.akari.tech.item
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.item.Item
+import net.minecraft.item.*
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import org.owari.akari.tech.akariItemGroup
@@ -9,6 +9,17 @@ import org.owari.akari.tech.modId
 
 object Items {
     fun registerItems() {
+        registerIngots()
+        registerTools()
+    }
+
+    private inline fun register(name: String, item: Item) {
+        Registry.register(Registry.ITEM, Identifier(modId, name), item)
+    }
+
+    private inline fun simpleItem(maxCount: Int = 64) = Item(FabricItemSettings().group(akariItemGroup).maxCount(maxCount))
+
+    private inline fun registerIngots() {
         register("ingot_steel", INGOT_STEEL)
         register("ingot_stainless_steel", INGOT_STAINLESS_STEEL)
         register("ingot_tin", INGOT_TIN)
@@ -30,12 +41,6 @@ object Items {
         register("ingot_ferrite", INGOT_FERRITE)
     }
 
-    private inline fun register(name: String, item: Item) {
-        Registry.register(Registry.ITEM, Identifier(modId, name), item)
-    }
-
-    private inline fun simpleItem() = Item(FabricItemSettings().group(akariItemGroup))
-
     @JvmStatic val INGOT_STEEL = simpleItem()
     @JvmStatic val INGOT_STAINLESS_STEEL = simpleItem()
     @JvmStatic val INGOT_TIN = simpleItem()
@@ -55,4 +60,19 @@ object Items {
     @JvmStatic val INGOT_INVAR = simpleItem()
     @JvmStatic val INGOT_SODIUM = simpleItem()
     @JvmStatic val INGOT_FERRITE = simpleItem()
+
+    @JvmStatic val INGOT_ALL: List<Item> = listOf(
+        INGOT_STEEL, INGOT_STAINLESS_STEEL, INGOT_TIN, INGOT_LEAD, INGOT_SILVER, INGOT_ZINC, INGOT_ALUMINIUM,
+        INGOT_TITANIUM, INGOT_TUNGSTEN, INGOT_CHROMIUM, INGOT_MANGANESE, INGOT_NICKEL, INGOT_MAGNESIUM,
+        INGOT_ANTIMONY, INGOT_LITHIUM, INGOT_NEODYMIUM, INGOT_INVAR, INGOT_SODIUM, INGOT_FERRITE
+    )
+
+    private inline fun registerTools() {
+        register("tool_engineering_hammer", TOOL_ENGINEERING_HAMMER)
+
+    }
+
+    @JvmStatic val TOOL_ENGINEERING_HAMMER = simpleItem(maxCount = 1)
+
+    @JvmStatic val TOOL_ALL: List<Item> = listOf(TOOL_ENGINEERING_HAMMER)
 }

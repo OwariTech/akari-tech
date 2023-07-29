@@ -1,14 +1,13 @@
 package org.owari.akari.tech.block
 
-import net.fabricmc.fabric.api.block.v1.FabricBlock
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.Block
-import net.minecraft.block.Blocks
 import net.minecraft.block.Material
 import net.minecraft.block.SandBlock
 import net.minecraft.item.BlockItem
 import net.minecraft.sound.BlockSoundGroup
+import net.minecraft.state.property.IntProperty
 import net.minecraft.util.DyeColor
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
@@ -17,7 +16,27 @@ import org.owari.akari.tech.modId
 
 object Blocks {
     fun registerBlocks() {
-        // 按照最下方排列的顺序注册所有的方块
+        registerOres()
+        registerMachines()
+    }
+
+    private inline fun register(name: String, block: Block, item: BlockItem) {
+        val id = Identifier(modId, name)
+        Registry.register(Registry.BLOCK, id, block)
+        Registry.register(Registry.ITEM, id, item)
+    }
+    
+    private inline fun Block.makeBlockItem() = BlockItem(this, FabricItemSettings().group(akariItemGroup))
+    
+    private inline fun simpleBlock(
+        material: Material = Material.STONE,
+        hardness: Float = 3.0f,
+        resistance: Float = 3.0f,
+        luminance: Int = 0,
+        sound: BlockSoundGroup = BlockSoundGroup.STONE
+    ) = Block(FabricBlockSettings.of(material).requiresTool().strength(hardness, resistance).luminance(luminance).sounds(sound))
+
+    private inline fun registerOres() {
         register("ore_tin", ORE_TIN, ORE_TIN_ITEM)
         register("ore_zinc", ORE_ZINC, ORE_ZINC_ITEM)
         register("ore_lead", ORE_LEAD, ORE_LEAD_ITEM)
@@ -46,22 +65,6 @@ object Blocks {
         register("ore_salt", ORE_SALT, ORE_SALT_ITEM)
         register("ore_rock_salt", ORE_ROCK_SALT, ORE_ROCK_SALT_ITEM)
     }
-
-    private inline fun register(name: String, block: Block, item: BlockItem) {
-        val id = Identifier(modId, name)
-        Registry.register(Registry.BLOCK, id, block)
-        Registry.register(Registry.ITEM, id, item)
-    }
-    
-    private inline fun Block.makeBlockItem() = BlockItem(this, FabricItemSettings().group(akariItemGroup))
-    
-    private inline fun simpleBlock(
-        material: Material = Material.STONE,
-        hardness: Float = 3.0f,
-        resistance: Float = 3.0f,
-        luminance: Int = 0,
-        sound: BlockSoundGroup = BlockSoundGroup.STONE
-    ) = Block(FabricBlockSettings.of(material).requiresTool().strength(hardness, resistance).luminance(luminance).sounds(sound))
 
     @JvmStatic val ORE_TIN = simpleBlock()
     @JvmStatic val ORE_TIN_ITEM = ORE_TIN.makeBlockItem()
@@ -116,4 +119,20 @@ object Blocks {
     @JvmStatic val ORE_SALT_ITEM = ORE_SALT.makeBlockItem()
     @JvmStatic val ORE_ROCK_SALT = simpleBlock(hardness = 1.5f)
     @JvmStatic val ORE_ROCK_SALT_ITEM = ORE_ROCK_SALT.makeBlockItem()
+
+    @JvmStatic val ORE_ALL = listOf(
+        ORE_TIN, ORE_ZINC, ORE_LEAD, ORE_SILVER, ORE_MANGANESE, ORE_NICKEL, ORE_MAGNESIUM, ORE_CHROMIUM,
+        ORE_RUTILE, ORE_TITANIUM, ORE_TUNGSTEN, ORE_PLATINUM_GROUP, ORE_PYRITE, ORE_SULFUR, ORE_APATITE,
+        ORE_RUBY, ORE_ANTIMONY, ORE_LITHIUM, ORE_GRAPHITE, ORE_NITERITE, ORE_URANIUM, ORE_ALUMINIUM,
+        ORE_BLACK_SAND, ORE_ANTHRACITE, ORE_SALT, ORE_ROCK_SALT,
+    )
+
+    private inline fun registerMachines() {
+        register("machine", MACHINE_CASING, MACHINE_CASING_ITEM)
+    }
+
+    @JvmStatic val CASING_TIER_PROPERTY = IntProperty.of("tier", 0, 6)
+
+    @JvmStatic val MACHINE_CASING = MachineCasing()
+    @JvmStatic val MACHINE_CASING_ITEM = MACHINE_CASING.makeBlockItem()
 }

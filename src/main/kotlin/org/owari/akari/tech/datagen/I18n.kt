@@ -10,6 +10,8 @@ class ChineseLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider
     override fun generateTranslations(b: TranslationBuilder) {
         b.add(akariItemGroup, "灯火科技")
 
+        b.add(Items.TOOL_ENGINEERING_HAMMER, "工程锤")
+
         b.add(Items.INGOT_STEEL, "钢锭")
         b.add(Items.INGOT_STAINLESS_STEEL, "不锈钢锭")
         b.add(Items.INGOT_TIN, "锡锭")
@@ -60,12 +62,17 @@ class ChineseLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider
 
         b.add("advancement.$modId.get_tin.title", "一些新矿石?")
         b.add("advancement.$modId.get_tin.description", "挖掘到一个锡石矿石")
+
+        b.add("$modId.temperature_prefix", "温度:")
+        b.add("$modId.temperature_unit", "℃")
     }
 }
 
 class EnglishLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider(gen, "en_us") {
     override fun generateTranslations(b: TranslationBuilder) {
         b.add(akariItemGroup, "Akari Tech")
+
+        b.add(Items.TOOL_ENGINEERING_HAMMER, "Engineering Hammer")
 
         b.add(Items.INGOT_STEEL, "Steel Ingot")
         b.add(Items.INGOT_STAINLESS_STEEL, "Stainless Steel Ingot")
@@ -117,5 +124,8 @@ class EnglishLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider
 
         b.add("advancement.$modId.get_tin.title", "New ores?")
         b.add("advancement.$modId.get_tin.description", "Got a cassiterite ore")
+
+        b.add("$modId.temperature_prefix", "Temperature:")
+        b.add("$modId.temperature_unit", "℃")
     }
 }

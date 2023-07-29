@@ -1,6 +1,24 @@
 {
   "replace": false,
   "values": [
-    "akari-tech:ingot_tin"
+    "akari-tech:ingot_steel",
+    "akari-tech:ingot_stainless_steel",
+    "akari-tech:ingot_tin",
+    "akari-tech:ingot_lead",
+    "akari-tech:ingot_silver",
+    "akari-tech:ingot_zinc",
+    "akari-tech:ingot_aluminium",
+    "akari-tech:ingot_titanium",
+    "akari-tech:ingot_tungsten",
+    "akari-tech:ingot_chromium",
+    "akari-tech:ingot_manganese",
+    "akari-tech:ingot_nickel",
+    "akari-tech:ingot_magnesium",
+    "akari-tech:ingot_antimony",
+    "akari-tech:ingot_lithium",
+    "akari-tech:ingot_neodymium",
+    "akari-tech:ingot_invar",
+    "akari-tech:ingot_sodium",
+    "akari-tech:ingot_ferrite"
   ]
 }

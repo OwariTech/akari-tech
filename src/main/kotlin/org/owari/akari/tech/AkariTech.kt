@@ -2,6 +2,7 @@ package org.owari.akari.tech
 
 import net.fabricmc.api.ModInitializer
 import org.owari.akari.tech.block.Blocks
+import org.owari.akari.tech.blockentity.BlockEntities
 import org.owari.akari.tech.item.Items
 import org.owari.akari.tech.worldgen.OreGenerators
 import org.slf4j.LoggerFactory
@@ -16,6 +17,7 @@ object AkariTech : ModInitializer {
 
 		Items.registerItems()
 		Blocks.registerBlocks()
+		BlockEntities.registerBlockEntities()
 		OreGenerators.registerOreGenerators()
 	}
 }

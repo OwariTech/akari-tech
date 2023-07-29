@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "akari-tech:item/tool_engineering_hammer"
+  }
+}

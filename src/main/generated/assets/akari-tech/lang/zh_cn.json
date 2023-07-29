@@ -1,6 +1,8 @@
 {
   "advancement.akari-tech.get_tin.description": "挖掘到一个锡石矿石",
   "advancement.akari-tech.get_tin.title": "一些新矿石?",
+  "akari-tech.temperature_prefix": "温度:",
+  "akari-tech.temperature_unit": "℃",
   "block.akari-tech.ore_aluminium": "铝土矿石",
   "block.akari-tech.ore_anthracite": "无烟煤矿石",
   "block.akari-tech.ore_antimony": "辉锑矿石",
@@ -46,5 +48,6 @@
   "item.akari-tech.ingot_titanium": "钛锭",
   "item.akari-tech.ingot_tungsten": "钨锭",
   "item.akari-tech.ingot_zinc": "锌锭",
+  "item.akari-tech.tool_engineering_hammer": "工程锤",
   "itemGroup.akari-tech.akari_item_group": "灯火科技"
 }

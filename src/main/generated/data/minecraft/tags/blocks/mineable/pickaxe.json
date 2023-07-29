@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "akari-tech:ore_tin",
+    "akari-tech:ore_zinc",
+    "akari-tech:ore_lead",
+    "akari-tech:ore_silver",
+    "akari-tech:ore_manganese",
+    "akari-tech:ore_nickel",
+    "akari-tech:ore_magnesium",
+    "akari-tech:ore_chromium",
+    "akari-tech:ore_rutile",
+    "akari-tech:ore_titanium",
+    "akari-tech:ore_tungsten",
+    "akari-tech:ore_platinum_group",
+    "akari-tech:ore_pyrite",
+    "akari-tech:ore_sulfur",
+    "akari-tech:ore_apatite",
+    "akari-tech:ore_ruby",
+    "akari-tech:ore_antimony",
+    "akari-tech:ore_lithium",
+    "akari-tech:ore_graphite",
+    "akari-tech:ore_niterite",
+    "akari-tech:ore_uranium",
+    "akari-tech:ore_aluminium",
+    "akari-tech:ore_anthracite",
+    "akari-tech:ore_salt",
+    "akari-tech:ore_rock_salt"
+  ]
+}
