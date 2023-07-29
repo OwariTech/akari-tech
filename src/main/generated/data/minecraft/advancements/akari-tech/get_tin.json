@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "akari-tech:ore_tin"
+    },
+    "title": {
+      "translate": "advancement.akari-tech.get_tin.title"
+    },
+    "description": {
+      "translate": "advancement.akari-tech.get_tin.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "akari-tech:icon.png"
+  },
+  "criteria": {
+    "get_tin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "akari-tech:ore_tin"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_tin"
+    ]
+  ]
+}

@@ -1,4 +1,6 @@
 {
+  "advancement.akari-tech.get_tin.description": "挖掘到一个锡石矿石",
+  "advancement.akari-tech.get_tin.title": "一些新矿石?",
   "block.akari-tech.ore_aluminium": "铝土矿石",
   "block.akari-tech.ore_anthracite": "无烟煤矿石",
   "block.akari-tech.ore_antimony": "辉锑矿石",
@@ -25,5 +27,24 @@
   "block.akari-tech.ore_tungsten": "黑钨矿石",
   "block.akari-tech.ore_uranium": "晶质铀矿石",
   "block.akari-tech.ore_zinc": "闪锌矿石",
-  "item.akari-tech.ingot_tin": "锡锭"
+  "item.akari-tech.ingot_aluminium": "铝锭",
+  "item.akari-tech.ingot_antimony": "锑锭",
+  "item.akari-tech.ingot_chromium": "铬锭",
+  "item.akari-tech.ingot_ferrite": "铁氧体锭",
+  "item.akari-tech.ingot_invar": "殷钢锭",
+  "item.akari-tech.ingot_lead": "铅锭",
+  "item.akari-tech.ingot_lithium": "锂锭",
+  "item.akari-tech.ingot_magnesium": "镁锭",
+  "item.akari-tech.ingot_manganese": "锰锭",
+  "item.akari-tech.ingot_neodymium": "钕锭",
+  "item.akari-tech.ingot_nickel": "镍锭",
+  "item.akari-tech.ingot_silver": "银锭",
+  "item.akari-tech.ingot_sodium": "钠锭",
+  "item.akari-tech.ingot_stainless_steel": "不锈钢锭",
+  "item.akari-tech.ingot_steel": "钢锭",
+  "item.akari-tech.ingot_tin": "锡锭",
+  "item.akari-tech.ingot_titanium": "钛锭",
+  "item.akari-tech.ingot_tungsten": "钨锭",
+  "item.akari-tech.ingot_zinc": "锌锭",
+  "itemGroup.akari-tech.akari_item_group": "灯火科技"
 }

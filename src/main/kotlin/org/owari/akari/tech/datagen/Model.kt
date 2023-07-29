@@ -42,6 +42,24 @@ class ModelProvider(gen: FabricDataGenerator) : FabricModelProvider(gen) {
     }
 
     override fun generateItemModels(gen: ItemModelGenerator) {
+        gen.register(Items.INGOT_STEEL, Models.GENERATED)
+        gen.register(Items.INGOT_STAINLESS_STEEL, Models.GENERATED)
         gen.register(Items.INGOT_TIN, Models.GENERATED)
+        gen.register(Items.INGOT_LEAD, Models.GENERATED)
+        gen.register(Items.INGOT_SILVER, Models.GENERATED)
+        gen.register(Items.INGOT_ZINC, Models.GENERATED)
+        gen.register(Items.INGOT_ALUMINIUM, Models.GENERATED)
+        gen.register(Items.INGOT_TITANIUM, Models.GENERATED)
+        gen.register(Items.INGOT_TUNGSTEN, Models.GENERATED)
+        gen.register(Items.INGOT_CHROMIUM, Models.GENERATED)
+        gen.register(Items.INGOT_MANGANESE, Models.GENERATED)
+        gen.register(Items.INGOT_NICKEL, Models.GENERATED)
+        gen.register(Items.INGOT_MAGNESIUM, Models.GENERATED)
+        gen.register(Items.INGOT_ANTIMONY, Models.GENERATED)
+        gen.register(Items.INGOT_LITHIUM, Models.GENERATED)
+        gen.register(Items.INGOT_NEODYMIUM, Models.GENERATED)
+        gen.register(Items.INGOT_INVAR, Models.GENERATED)
+        gen.register(Items.INGOT_SODIUM, Models.GENERATED)
+        gen.register(Items.INGOT_FERRITE, Models.GENERATED)
     }
 }
