@@ -42,3 +42,6 @@ replay_*.log
 # fleet
 
 .fleet/
+
+# datagen
+src/main/generated/.cache/
