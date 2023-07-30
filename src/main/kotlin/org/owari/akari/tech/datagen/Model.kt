@@ -12,10 +12,13 @@ class ModelProvider(gen: FabricDataGenerator) : FabricModelProvider(gen) {
         (Blocks.ORE_ALL - Blocks.ORE_PYRITE).forEach(gen::registerSimpleCubeAll)
         // 黄铁矿 (愚人金) 注册为金矿的材质
         gen.registerSingleton(Blocks.ORE_PYRITE, TextureMap.all(Identifier("minecraft", "block/gold_ore")), Models.CUBE_ALL)
+        gen.registerSimpleCubeAll(Blocks.MACHINE_CASING)
     }
 
     override fun generateItemModels(gen: ItemModelGenerator) {
         Items.INGOT_ALL.forEach { gen.register(it, Models.GENERATED) }
         Items.TOOL_ALL.forEach { gen.register(it, Models.HANDHELD) }
+        gen.register(Items.BLUEPRINT_EMPTY, Models.GENERATED)
+        Items.BLUEPRINT_ALL.forEach { gen.register(it, Items.BLUEPRINT_EMPTY, Models.GENERATED) }
     }
 }

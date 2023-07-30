@@ -5,8 +5,17 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import org.owari.akari.tech.*
 import org.owari.akari.tech.block.Blocks
 import org.owari.akari.tech.item.Items
+import org.owari.akari.tech.machine.MachineType
+import org.owari.akari.tech.machine.MachineTypes
 
-class ChineseLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider(gen, "zh_cn") {
+abstract class AkariLanguageProvider(gen: FabricDataGenerator, lang: String) : FabricLanguageProvider(gen, lang) {
+
+    fun TranslationBuilder.add(machineType: MachineType<*, *>, text: String) {
+        add("${machineType.translationKey}.name", text)
+    }
+}
+
+class ChineseLanguageProvider(gen: FabricDataGenerator) : AkariLanguageProvider(gen, "zh_cn") {
     override fun generateTranslations(b: TranslationBuilder) {
         b.add(akariItemGroup, "灯火科技")
 
@@ -60,6 +69,8 @@ class ChineseLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider
         b.add(Blocks.ORE_SALT, "盐矿石")
         b.add(Blocks.ORE_ROCK_SALT, "岩盐矿石")
 
+        b.add(MachineTypes.BURNING_BOX, "燃烧室")
+
         b.add("advancement.$modId.get_tin.title", "一些新矿石?")
         b.add("advancement.$modId.get_tin.description", "挖掘到一个锡石矿石")
 
@@ -68,7 +79,7 @@ class ChineseLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider
     }
 }
 
-class EnglishLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider(gen, "en_us") {
+class EnglishLanguageProvider(gen: FabricDataGenerator) : AkariLanguageProvider(gen, "en_us") {
     override fun generateTranslations(b: TranslationBuilder) {
         b.add(akariItemGroup, "Akari Tech")
 
@@ -121,6 +132,8 @@ class EnglishLanguageProvider(gen: FabricDataGenerator) : FabricLanguageProvider
         b.add(Blocks.ORE_ANTHRACITE, "Anthracite Ore")
         b.add(Blocks.ORE_SALT, "Salt Ore")
         b.add(Blocks.ORE_ROCK_SALT, "Rock Salt Ore")
+
+        b.add(MachineTypes.BURNING_BOX, "Burning Box")
 
         b.add("advancement.$modId.get_tin.title", "New ores?")
         b.add("advancement.$modId.get_tin.description", "Got a cassiterite ore")

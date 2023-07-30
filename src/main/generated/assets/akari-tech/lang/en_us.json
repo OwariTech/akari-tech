@@ -49,5 +49,6 @@
   "item.akari-tech.ingot_tungsten": "Tungsten Ingot",
   "item.akari-tech.ingot_zinc": "Zinc Ingot",
   "item.akari-tech.tool_engineering_hammer": "Engineering Hammer",
-  "itemGroup.akari-tech.akari_item_group": "Akari Tech"
+  "itemGroup.akari-tech.akari_item_group": "Akari Tech",
+  "machine_type.burning_box.name": "Burning Box"
 }

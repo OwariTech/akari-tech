@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "akira-tech:/block/machine_burning_box", "uvlock": true },
+    "facing=east":  { "model": "akira-tech:/block/machine_burning_box", "y":  90, "uvlock": true },
+    "facing=south": { "model": "akira-tech:/block/machine_burning_box", "y": 180, "uvlock": true },
+    "facing=west":  { "model": "akira-tech:/block/machine_burning_box", "y": 270, "uvlock": true }
+  }
+}

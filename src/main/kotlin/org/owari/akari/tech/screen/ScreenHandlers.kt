@@ -11,4 +11,5 @@ object ScreenHandlers {
     }
 
     @JvmStatic val SCREEN_HANDLER_TYPE_SIMPLE = ScreenHandlerRegistry.registerSimple(Identifier(modId, "screen_handler_simple"), ::SimpleScreenHandler)
+    @JvmStatic val SCREEN_HANDLER_TYPE_BURNING_BOX = ScreenHandlerRegistry.registerSimple(Identifier(modId, "screen_handler_burning_box"), ::BurningBoxScreenHandler)
 }

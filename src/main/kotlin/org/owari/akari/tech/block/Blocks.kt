@@ -7,6 +7,7 @@ import net.minecraft.block.Material
 import net.minecraft.block.SandBlock
 import net.minecraft.item.BlockItem
 import net.minecraft.sound.BlockSoundGroup
+import net.minecraft.state.property.BooleanProperty
 import net.minecraft.state.property.IntProperty
 import net.minecraft.util.DyeColor
 import net.minecraft.util.Identifier
@@ -128,11 +129,16 @@ object Blocks {
     )
 
     private inline fun registerMachines() {
-        register("machine", MACHINE_CASING, MACHINE_CASING_ITEM)
+        //register("machine_casing", MACHINE_CASING, MACHINE_CASING_ITEM)
+        register("machine_burning_box", MACHINE_BURNING_BOX, MACHINE_BURNING_BOX_ITEM)
     }
 
+    @JvmStatic val WORKING_PROPERTY = BooleanProperty.of("working")
     @JvmStatic val CASING_TIER_PROPERTY = IntProperty.of("tier", 0, 6)
 
     @JvmStatic val MACHINE_CASING = MachineCasing()
     @JvmStatic val MACHINE_CASING_ITEM = MACHINE_CASING.makeBlockItem()
+
+    @JvmStatic val MACHINE_BURNING_BOX = BurningBox()
+    @JvmStatic val MACHINE_BURNING_BOX_ITEM = MACHINE_BURNING_BOX.makeBlockItem()
 }

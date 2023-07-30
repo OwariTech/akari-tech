@@ -8,7 +8,7 @@ import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
 import org.owari.akari.tech.inventory.SimpleInventory
 
-class SimpleScreenHandler(syncId: Int, pi: PlayerInventory, val inv: Inventory = SimpleInventory.ofSize(9))
+class SimpleScreenHandler(syncId: Int, pi: PlayerInventory, inv: Inventory = SimpleInventory.ofSize(9))
     : ScreenHandler(ScreenHandlers.SCREEN_HANDLER_TYPE_SIMPLE ,syncId) {
     override fun canUse(player: PlayerEntity) = true
 

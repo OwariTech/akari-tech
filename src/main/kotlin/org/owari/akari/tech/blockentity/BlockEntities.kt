@@ -9,7 +9,8 @@ import org.owari.akari.tech.modId
 
 object BlockEntities {
     fun registerBlockEntities() {
-       register("machine_casing", MACHINE_CASING_TYPE)
+        register("machine_casing", MACHINE_CASING_TYPE)
+        register("machine_burning_box", MACHINE_BURNING_BOX_TYPE)
     }
 
     private inline fun register(name: String, bet: BlockEntityType<*>) {
@@ -17,4 +18,5 @@ object BlockEntities {
     }
 
     @JvmStatic val MACHINE_CASING_TYPE = FabricBlockEntityTypeBuilder.create(::MachineCasingBE, Blocks.MACHINE_CASING).build()
+    @JvmStatic val MACHINE_BURNING_BOX_TYPE = FabricBlockEntityTypeBuilder.create(::BurningBoxBE, Blocks.MACHINE_BURNING_BOX).build()
 }

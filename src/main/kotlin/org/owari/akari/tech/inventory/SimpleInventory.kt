@@ -41,6 +41,8 @@ interface SimpleInventory : Inventory {
     override fun canPlayerUse(player: PlayerEntity) = true
 
     companion object {
+        @JvmStatic val ZERO_SIZE = ofSize(0)
+
         @JvmStatic fun of(items: DefaultedList<ItemStack>): SimpleInventory = object : SimpleInventory { override val items = items }
 
         @JvmStatic fun ofSize(size: Int) = of(DefaultedList.ofSize(size, ItemStack.EMPTY))

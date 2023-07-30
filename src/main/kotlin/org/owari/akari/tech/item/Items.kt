@@ -5,12 +5,15 @@ import net.minecraft.item.*
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import org.owari.akari.tech.akariItemGroup
+import org.owari.akari.tech.machine.MachineType
+import org.owari.akari.tech.machine.MachineTypes
 import org.owari.akari.tech.modId
 
 object Items {
     fun registerItems() {
         registerIngots()
         registerTools()
+        registerBluePrints()
     }
 
     private inline fun register(name: String, item: Item) {
@@ -75,4 +78,17 @@ object Items {
     @JvmStatic val TOOL_ENGINEERING_HAMMER = simpleItem(maxCount = 1)
 
     @JvmStatic val TOOL_ALL: List<Item> = listOf(TOOL_ENGINEERING_HAMMER)
+
+    private inline fun registerBluePrints() {
+        register("blueprint", BLUEPRINT_EMPTY)
+
+        register("blueprint_burning_box", BLUEPRINT_BURNING_BOX)
+    }
+
+    @JvmStatic val BLUEPRINT_EMPTY = simpleItem()
+
+    @JvmStatic val BLUEPRINT_BURNING_BOX = BluePrint(MachineTypes.BURNING_BOX)
+
+    @JvmStatic val BLUEPRINT_ALL: List<Item> = listOf(BLUEPRINT_BURNING_BOX)
+
 }

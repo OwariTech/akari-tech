@@ -49,5 +49,6 @@
   "item.akari-tech.ingot_tungsten": "钨锭",
   "item.akari-tech.ingot_zinc": "锌锭",
   "item.akari-tech.tool_engineering_hammer": "工程锤",
-  "itemGroup.akari-tech.akari_item_group": "灯火科技"
+  "itemGroup.akari-tech.akari_item_group": "灯火科技",
+  "machine_type.burning_box.name": "燃烧室"
 }
