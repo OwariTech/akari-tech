@@ -8,16 +8,25 @@ import org.owari.akari.tech.item.Items
 import org.owari.akari.tech.machine.MachineType
 import org.owari.akari.tech.machine.MachineTypes
 
+val MachineType<*>.translationKey: String
+    get() = "custom.$modId.${this.name}"
+
 abstract class AkariLanguageProvider(gen: FabricDataGenerator, lang: String) : FabricLanguageProvider(gen, lang) {
 
-    fun TranslationBuilder.add(machineType: MachineType<*, *>, text: String) {
-        add("${machineType.translationKey}.name", text)
+    fun TranslationBuilder.add(machineType: MachineType<*>, text: String) {
+        add(machineType.translationKey, text)
     }
 }
 
 class ChineseLanguageProvider(gen: FabricDataGenerator) : AkariLanguageProvider(gen, "zh_cn") {
     override fun generateTranslations(b: TranslationBuilder) {
         b.add(akariItemGroup, "灯火科技")
+
+        b.add(Items.BLUEPRINT_EMPTY, "蓝图 (空)")
+        Items.BLUEPRINT_ALL.forEach { b.add(it, "蓝图 (包含机器设计)") }
+
+        b.add(Items.TECHNIQUE_INSTRUCTION_EMPTY, "工艺指导书 (空)")
+        Items.TECHNIQUE_INSTRUCTION_ALL.forEach { b.add(it, "工艺指导书 (包含工艺)") }
 
         b.add(Items.TOOL_ENGINEERING_HAMMER, "工程锤")
 
@@ -69,13 +78,18 @@ class ChineseLanguageProvider(gen: FabricDataGenerator) : AkariLanguageProvider(
         b.add(Blocks.ORE_SALT, "盐矿石")
         b.add(Blocks.ORE_ROCK_SALT, "岩盐矿石")
 
+        b.add(Blocks.MACHINE_CASING, "机器外壳")
+        b.add(Blocks.MACHINE_BURNING_BOX_ITEM, "燃烧室")
+
         b.add(MachineTypes.BURNING_BOX, "燃烧室")
 
         b.add("advancement.$modId.get_tin.title", "一些新矿石?")
         b.add("advancement.$modId.get_tin.description", "挖掘到一个锡石矿石")
 
-        b.add("$modId.temperature_prefix", "温度:")
-        b.add("$modId.temperature_unit", "℃")
+        b.add("custom.$modId.temperature_prefix", "温度:")
+        b.add("custom.$modId.temperature_unit", "℃")
+        b.add("custom.$modId.blueprint_tooltip_prefix", "类型: ")
+        b.add("custom.$modId.machine_part_tier_prefix", "等级: ")
     }
 }
 
@@ -84,6 +98,12 @@ class EnglishLanguageProvider(gen: FabricDataGenerator) : AkariLanguageProvider(
         b.add(akariItemGroup, "Akari Tech")
 
         b.add(Items.TOOL_ENGINEERING_HAMMER, "Engineering Hammer")
+
+        b.add(Items.BLUEPRINT_EMPTY, "Blueprints (Empty)")
+        Items.BLUEPRINT_ALL.forEach { b.add(it, "Blueprints (Including Machine Design)") }
+
+        b.add(Items.TECHNIQUE_INSTRUCTION_EMPTY, "Technique Instructions (Empty)")
+        Items.TECHNIQUE_INSTRUCTION_ALL.forEach { b.add(it, "Technique Instructions (Including Techniques)") }
 
         b.add(Items.INGOT_STEEL, "Steel Ingot")
         b.add(Items.INGOT_STAINLESS_STEEL, "Stainless Steel Ingot")
@@ -133,12 +153,17 @@ class EnglishLanguageProvider(gen: FabricDataGenerator) : AkariLanguageProvider(
         b.add(Blocks.ORE_SALT, "Salt Ore")
         b.add(Blocks.ORE_ROCK_SALT, "Rock Salt Ore")
 
+        b.add(Blocks.MACHINE_CASING, "Machine Casing")
+        b.add(Blocks.MACHINE_BURNING_BOX_ITEM, "Burning Box")
+
         b.add(MachineTypes.BURNING_BOX, "Burning Box")
 
         b.add("advancement.$modId.get_tin.title", "New ores?")
         b.add("advancement.$modId.get_tin.description", "Got a cassiterite ore")
 
-        b.add("$modId.temperature_prefix", "Temperature:")
-        b.add("$modId.temperature_unit", "℃")
+        b.add("custom.$modId.temperature_prefix", "Temperature:")
+        b.add("custom.$modId.temperature_unit", "℃")
+        b.add("custom.$modId.blueprint_tooltip_prefix", "Type: ")
+        b.add("custom.$modId.machine_part_tier_prefix", "Tier: ")
     }
 }

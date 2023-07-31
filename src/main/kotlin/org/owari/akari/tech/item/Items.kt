@@ -5,6 +5,7 @@ import net.minecraft.item.*
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import org.owari.akari.tech.akariItemGroup
+import org.owari.akari.tech.item.part.ThermalConductor
 import org.owari.akari.tech.machine.MachineType
 import org.owari.akari.tech.machine.MachineTypes
 import org.owari.akari.tech.modId
@@ -14,6 +15,8 @@ object Items {
         registerIngots()
         registerTools()
         registerBluePrints()
+        registerTechniqueInstructions()
+        registerParts()
     }
 
     private inline fun register(name: String, item: Item) {
@@ -89,6 +92,32 @@ object Items {
 
     @JvmStatic val BLUEPRINT_BURNING_BOX = BluePrint(MachineTypes.BURNING_BOX)
 
-    @JvmStatic val BLUEPRINT_ALL: List<Item> = listOf(BLUEPRINT_BURNING_BOX)
+    @JvmStatic val BLUEPRINT_ALL: List<BluePrint> = listOf(BLUEPRINT_BURNING_BOX)
+
+    private inline fun registerTechniqueInstructions() {
+        register("technique_instruction", TECHNIQUE_INSTRUCTION_EMPTY)
+    }
+
+    @JvmStatic val TECHNIQUE_INSTRUCTION_EMPTY = simpleItem()
+
+    @JvmStatic val TECHNIQUE_INSTRUCTION_ALL: List<TechniqueInstruction> = listOf()
+
+    private inline fun registerParts() {
+        register("part_thermal_conductor_t0", PART_THERMAL_CONDUCTOR_T0)
+        register("part_thermal_conductor_t1", PART_THERMAL_CONDUCTOR_T1)
+        register("part_thermal_conductor_t2", PART_THERMAL_CONDUCTOR_T2)
+        register("part_thermal_conductor_t3", PART_THERMAL_CONDUCTOR_T3)
+        register("part_thermal_conductor_t4", PART_THERMAL_CONDUCTOR_T4)
+        register("part_thermal_conductor_t5", PART_THERMAL_CONDUCTOR_T5)
+        register("part_thermal_conductor_t6", PART_THERMAL_CONDUCTOR_T6)
+    }
+
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T0 = ThermalConductor(0)
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T1 = ThermalConductor(1)
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T2 = ThermalConductor(2)
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T3 = ThermalConductor(3)
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T4 = ThermalConductor(4)
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T5 = ThermalConductor(5)
+    @JvmStatic val PART_THERMAL_CONDUCTOR_T6 = ThermalConductor(6)
 
 }

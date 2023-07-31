@@ -1,8 +1,8 @@
 {
   "advancement.akari-tech.get_tin.description": "Got a cassiterite ore",
   "advancement.akari-tech.get_tin.title": "New ores?",
-  "akari-tech.temperature_prefix": "Temperature:",
-  "akari-tech.temperature_unit": "℃",
+  "block.akari-tech.machine_burning_box": "Burning Box",
+  "block.akari-tech.machine_casing": "Machine Casing",
   "block.akari-tech.ore_aluminium": "Bauxite Ore",
   "block.akari-tech.ore_anthracite": "Anthracite Ore",
   "block.akari-tech.ore_antimony": "Stibnite Ore",
@@ -29,6 +29,13 @@
   "block.akari-tech.ore_tungsten": "Wolframite Ore",
   "block.akari-tech.ore_uranium": "Uraninite Ore",
   "block.akari-tech.ore_zinc": "Sphalerite Ore",
+  "custom.akari-tech.blueprint_tooltip_prefix": "Type: ",
+  "custom.akari-tech.burning_box": "Burning Box",
+  "custom.akari-tech.machine_part_tier_prefix": "Tier: ",
+  "custom.akari-tech.temperature_prefix": "Temperature:",
+  "custom.akari-tech.temperature_unit": "℃",
+  "item.akari-tech.blueprint": "Blueprints (Empty)",
+  "item.akari-tech.blueprint_burning_box": "Blueprints (Including Machine Design)",
   "item.akari-tech.ingot_aluminium": "Aluminium Ingot",
   "item.akari-tech.ingot_antimony": "Antimony Ingot",
   "item.akari-tech.ingot_chromium": "Chromium Ingot",
@@ -48,7 +55,7 @@
   "item.akari-tech.ingot_titanium": "Titanium Ingot",
   "item.akari-tech.ingot_tungsten": "Tungsten Ingot",
   "item.akari-tech.ingot_zinc": "Zinc Ingot",
+  "item.akari-tech.technique_instruction": "Technique Instructions (Empty)",
   "item.akari-tech.tool_engineering_hammer": "Engineering Hammer",
-  "itemGroup.akari-tech.akari_item_group": "Akari Tech",
-  "machine_type.burning_box.name": "Burning Box"
+  "itemGroup.akari-tech.akari_item_group": "Akari Tech"
 }

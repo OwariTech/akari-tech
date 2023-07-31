@@ -30,9 +30,9 @@ object Thermal {
 
     @JvmStatic
     fun getTemperatureDisplay(temperature: Int) =
-        TranslatableText("$modId.temperature_prefix")
+        TranslatableText("custom.$modId.temperature_prefix")
             .append(temperature.toString())
-            .append(TranslatableText("$modId.temperature_unit"))
+            .append(TranslatableText("custom.$modId.temperature_unit"))
 }
 
 interface ThermalSupplier {

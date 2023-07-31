@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/block",
-  "textures": {
-    "top": "akira-tech:block/machine_casing",
-    "front": "akira-tech:block/machine_burning_box_off",
-    "side": "akira-tech:block/machine_casing"
-  }
-}

@@ -8,12 +8,11 @@ import net.minecraft.screen.ScreenHandler
 import net.minecraft.screen.slot.Slot
 import org.owari.akari.tech.inventory.SimpleInventory
 
-class SimpleScreenHandler(syncId: Int, pi: PlayerInventory, inv: Inventory = SimpleInventory.ofSize(9))
+class SimpleScreenHandler(syncId: Int, pi: PlayerInventory, val inv: Inventory = SimpleInventory.ofSize(9))
     : ScreenHandler(ScreenHandlers.SCREEN_HANDLER_TYPE_SIMPLE ,syncId) {
     override fun canUse(player: PlayerEntity) = true
 
     init {
-        checkSize(inv, 9)
         inv.onOpen(pi.player)
         // inv
         for(m in 0..2) {
@@ -34,6 +33,21 @@ class SimpleScreenHandler(syncId: Int, pi: PlayerInventory, inv: Inventory = Sim
     }
 
     override fun transferSlot(player: PlayerEntity, index: Int): ItemStack {
-        TODO()
+        var result = ItemStack.EMPTY
+        val slot = slots[index]
+
+        if (!slot.hasStack()) return result
+        val original = slot.stack
+        result = original.copy()
+
+        if (index < inv.size()) {
+            if (!insertItem(original, inv.size(), slots.size, true)) return ItemStack.EMPTY
+        } else {
+            if (!insertItem(original, 0, slots.size, false)) return ItemStack.EMPTY
+        }
+
+        if(original.isEmpty) slot.stack = ItemStack.EMPTY
+        else slot.markDirty()
+        return result
     }
 }

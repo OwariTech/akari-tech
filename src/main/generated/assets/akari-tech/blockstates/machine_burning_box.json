@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "akari-tech:block/machine_burning_box",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "akari-tech:block/machine_burning_box"
+    },
+    "facing=south": {
+      "model": "akari-tech:block/machine_burning_box",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "akari-tech:block/machine_burning_box",
+      "y": 270
+    }
+  }
+}

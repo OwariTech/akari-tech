@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "minecraft:block/air"
+    "all": "akari-tech:block/machine_casing"
   }
 }

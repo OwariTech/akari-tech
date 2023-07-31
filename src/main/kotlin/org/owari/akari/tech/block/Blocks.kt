@@ -129,7 +129,7 @@ object Blocks {
     )
 
     private inline fun registerMachines() {
-        //register("machine_casing", MACHINE_CASING, MACHINE_CASING_ITEM)
+        register("machine_casing", MACHINE_CASING, MACHINE_CASING_ITEM)
         register("machine_burning_box", MACHINE_BURNING_BOX, MACHINE_BURNING_BOX_ITEM)
     }
 

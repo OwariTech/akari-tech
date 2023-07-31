@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.util.collection.DefaultedList
 
 interface SimpleInventory : Inventory {
-    val items: DefaultedList<ItemStack>
+    var items: DefaultedList<ItemStack>
 
     override fun clear() {
         items.clear()
@@ -43,7 +43,7 @@ interface SimpleInventory : Inventory {
     companion object {
         @JvmStatic val ZERO_SIZE = ofSize(0)
 
-        @JvmStatic fun of(items: DefaultedList<ItemStack>): SimpleInventory = object : SimpleInventory { override val items = items }
+        @JvmStatic fun of(items: DefaultedList<ItemStack>): SimpleInventory = object : SimpleInventory { override var items = items }
 
         @JvmStatic fun ofSize(size: Int) = of(DefaultedList.ofSize(size, ItemStack.EMPTY))
     }
