@@ -6,11 +6,10 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import org.owari.akari.tech.akariItemGroup
 import org.owari.akari.tech.item.part.ThermalConductor
-import org.owari.akari.tech.machine.MachineType
 import org.owari.akari.tech.machine.MachineTypes
 import org.owari.akari.tech.modId
 
-object Items {
+object ATItems {
     fun registerItems() {
         registerIngots()
         registerTools()

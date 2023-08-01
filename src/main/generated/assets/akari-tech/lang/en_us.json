@@ -34,6 +34,8 @@
   "custom.akari-tech.machine_part_tier_prefix": "Tier: ",
   "custom.akari-tech.temperature_prefix": "Temperature:",
   "custom.akari-tech.temperature_unit": "℃",
+  "custom.akari-tech.time_remaining": "Time remaining: ",
+  "custom.akari-tech.time_unit": " s",
   "item.akari-tech.blueprint": "Blueprints (Empty)",
   "item.akari-tech.blueprint_burning_box": "Blueprints (Including Machine Design)",
   "item.akari-tech.ingot_aluminium": "Aluminium Ingot",

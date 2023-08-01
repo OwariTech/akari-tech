@@ -2,8 +2,6 @@ package org.owari.akari.tech.blockentity
 
 import net.minecraft.block.BlockState
 import net.minecraft.block.entity.BlockEntity
-import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.inventory.Inventories
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
@@ -12,21 +10,21 @@ import net.minecraft.network.listener.ClientPlayPacketListener
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket
 import net.minecraft.screen.NamedScreenHandlerFactory
 import net.minecraft.text.TranslatableText
+import net.minecraft.util.ItemScatterer
 import net.minecraft.util.collection.DefaultedList
 import net.minecraft.util.math.BlockPos
+import net.minecraft.world.World
 import org.owari.akari.tech.datagen.translationKey
 import org.owari.akari.tech.machine.MachineType
 
 abstract class MachineBE<T : MachineBE<T>>(@JvmField val machineType: MachineType<T>, pos: BlockPos, state: BlockState) : BlockEntity(machineType.bet, pos, state), NamedScreenHandlerFactory  {
-    constructor(machineType: MachineType<T>, pos: BlockPos, state: BlockState, initParts: DefaultedList<ItemStack>) : this(machineType, pos, state) {
-        machineParts = initParts
-    }
-
     var machineParts = DefaultedList.ofSize(0, ItemStack.EMPTY)
         private set
+    var working = false
     //@JvmField var casingTier = 0
 
     override fun writeNbt(nbt: NbtCompound) {
+        nbt.putBoolean("working", working)
         val parts = NbtCompound()
         Inventories.writeNbt(parts, machineParts)
         nbt.put("parts", parts)
@@ -34,9 +32,8 @@ abstract class MachineBE<T : MachineBE<T>>(@JvmField val machineType: MachineTyp
     }
 
     override fun readNbt(nbt: NbtCompound) {
-        val parts = nbt.getCompound("parts")
-        Inventories.readNbt(parts, machineParts)
-        Inventories.readNbt(nbt, machineParts)
+        working = nbt.getBoolean("working")
+        Inventories.readNbt(nbt.getCompound("parts"), machineParts)
     //    casingTier = nbt.getInt("machine_casing_tier")
     }
 
@@ -46,5 +43,9 @@ abstract class MachineBE<T : MachineBE<T>>(@JvmField val machineType: MachineTyp
 
     override fun getDisplayName() = TranslatableText(machineType.translationKey)
 
-    override fun createMenu(syncId: Int, inv: PlayerInventory, player: PlayerEntity) = machineType.shFactory(syncId, inv)
+    abstract fun tick(world: World, pos: BlockPos, state: BlockState)
+
+    open fun drop(world: World, pos: BlockPos) {
+        ItemScatterer.spawn(world, pos, machineParts)
+    }
 }

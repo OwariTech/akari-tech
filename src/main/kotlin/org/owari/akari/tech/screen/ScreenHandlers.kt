@@ -8,6 +8,7 @@ import org.owari.akari.tech.modId
 object ScreenHandlers {
     fun registerScreenHandlers() {
         HandledScreens.register(SCREEN_HANDLER_TYPE_SIMPLE, ::SimpleScreen)
+        HandledScreens.register(SCREEN_HANDLER_TYPE_BURNING_BOX, ::BurningBoxScreen)
     }
 
     @JvmStatic val SCREEN_HANDLER_TYPE_SIMPLE = ScreenHandlerRegistry.registerSimple(Identifier(modId, "screen_handler_simple"), ::SimpleScreenHandler)

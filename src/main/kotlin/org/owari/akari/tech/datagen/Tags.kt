@@ -8,30 +8,37 @@ import net.minecraft.tag.BlockTags
 import net.minecraft.tag.TagKey
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
-import org.owari.akari.tech.block.Blocks
-import org.owari.akari.tech.item.Items
+import org.owari.akari.tech.block.ATBlocks
+import org.owari.akari.tech.item.ATItems
 import org.owari.akari.tech.modId
 
 class ItemTagsProvider(gen: FabricDataGenerator) : FabricTagProvider<Item>(gen, Registry.ITEM, "item") {
     override fun generateTags() {
-        Items.INGOT_ALL.forEach(getOrCreateTagBuilder(TagKeys.INGOT)::add)
+        ATItems.INGOT_ALL.forEach(getOrCreateTagBuilder(TagKeys.INGOT)::add)
     }
 }
 
 class BlockTagsProvider(gen: FabricDataGenerator) : FabricTagProvider<Block>(gen, Registry.BLOCK, "block") {
     override fun generateTags() {
-        (Blocks.ORE_ALL - Blocks.ORE_BLACK_SAND).forEach(getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)::add)
+        (ATBlocks.ORE_ALL - ATBlocks.ORE_BLACK_SAND).forEach(getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)::add)
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(ATBlocks.ORE_BLACK_SAND)
         listOf(
-            Blocks.ORE_TIN, Blocks.ORE_ZINC, Blocks.ORE_LEAD, Blocks.ORE_SULFUR, Blocks.ORE_APATITE, Blocks.ORE_GRAPHITE,
-            Blocks.ORE_NITERITE, Blocks.ORE_ALUMINIUM, Blocks.ORE_SALT, Blocks.ORE_ROCK_SALT,
+            ATBlocks.ORE_TIN, ATBlocks.ORE_ZINC, ATBlocks.ORE_LEAD, ATBlocks.ORE_SULFUR, ATBlocks.ORE_APATITE, ATBlocks.ORE_GRAPHITE,
+            ATBlocks.ORE_NITERITE, ATBlocks.ORE_ALUMINIUM, ATBlocks.ORE_SALT, ATBlocks.ORE_ROCK_SALT,
         ).forEach(getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)::add)
         listOf(
-            Blocks.ORE_SILVER, Blocks.ORE_MANGANESE, Blocks.ORE_NICKEL, Blocks.ORE_MAGNESIUM, Blocks.ORE_RUTILE,
-            Blocks.ORE_TITANIUM, Blocks.ORE_TUNGSTEN, Blocks.ORE_PLATINUM_GROUP, Blocks.ORE_PYRITE, Blocks.ORE_RUBY,
-            Blocks.ORE_ANTIMONY, Blocks.ORE_LITHIUM, Blocks.ORE_URANIUM,
+            ATBlocks.ORE_SILVER, ATBlocks.ORE_MANGANESE, ATBlocks.ORE_NICKEL, ATBlocks.ORE_MAGNESIUM, ATBlocks.ORE_RUTILE,
+            ATBlocks.ORE_TITANIUM, ATBlocks.ORE_TUNGSTEN, ATBlocks.ORE_PLATINUM_GROUP, ATBlocks.ORE_PYRITE, ATBlocks.ORE_RUBY,
+            ATBlocks.ORE_ANTIMONY, ATBlocks.ORE_LITHIUM, ATBlocks.ORE_URANIUM,
         ).forEach(getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)::add)
 
-        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(Blocks.ORE_BLACK_SAND)
+
+        listOf(
+            ATBlocks.MACHINE_CASING, ATBlocks.MACHINE_BURNING_BOX
+        ).forEach(getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)::add)
+        listOf(
+            ATBlocks.MACHINE_CASING, ATBlocks.MACHINE_BURNING_BOX
+        ).forEach(getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)::add)
     }
 }
 

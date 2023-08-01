@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry
 import org.owari.akari.tech.akariItemGroup
 import org.owari.akari.tech.modId
 
-object Blocks {
+object ATBlocks {
     fun registerBlocks() {
         registerOres()
         registerMachines()

@@ -1,9 +1,9 @@
 package org.owari.akari.tech
 
 import net.fabricmc.api.ModInitializer
-import org.owari.akari.tech.block.Blocks
-import org.owari.akari.tech.blockentity.BlockEntities
-import org.owari.akari.tech.item.Items
+import org.owari.akari.tech.block.ATBlocks
+import org.owari.akari.tech.blockentity.ATBlockEntities
+import org.owari.akari.tech.item.ATItems
 import org.owari.akari.tech.worldgen.OreGenerators
 import org.slf4j.LoggerFactory
 
@@ -15,9 +15,9 @@ object AkariTech : ModInitializer {
 	override fun onInitialize() {
 		logger.info("Loading mod [Akari Tech]")
 
-		Items.registerItems()
-		Blocks.registerBlocks()
-		BlockEntities.registerBlockEntities()
+		ATItems.registerItems()
+		ATBlocks.registerBlocks()
+		ATBlockEntities.registerBlockEntities()
 		OreGenerators.registerOreGenerators()
 	}
 }

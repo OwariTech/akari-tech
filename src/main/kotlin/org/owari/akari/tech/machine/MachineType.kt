@@ -6,15 +6,14 @@ import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.screen.ScreenHandler
 import net.minecraft.util.math.BlockPos
-import org.owari.akari.tech.block.Blocks
+import org.owari.akari.tech.block.ATBlocks
 import org.owari.akari.tech.block.MachineBlock
 import org.owari.akari.tech.blockentity.*
 import org.owari.akari.tech.screen.BurningBoxScreenHandler
 
 object MachineTypes {
     @JvmStatic val BURNING_BOX = MachineType("burning_box", mapOf("thermal_conductor" to 1,),
-        lazy { Blocks.MACHINE_BURNING_BOX }, lazy { BlockEntities.MACHINE_BURNING_BOX_TYPE },
-        ::BurningBoxBE, BurningBoxBE::tick, ::BurningBoxScreenHandler)
+        lazy { ATBlocks.MACHINE_BURNING_BOX }, lazy { ATBlockEntities.MACHINE_BURNING_BOX_TYPE }, ::BurningBoxBE)
 }
 
 class MachineType<T: MachineBE<T>>(
@@ -23,8 +22,6 @@ class MachineType<T: MachineBE<T>>(
     block: Lazy<MachineBlock<T>>,
     bet: Lazy<BlockEntityType<T>>,
     val beFactory: (BlockPos, BlockState) -> T,
-    val ticker: BlockEntityTicker<T>,
-    val shFactory: (Int, PlayerInventory) -> ScreenHandler,
 ) {
     val block by block
     val bet by bet

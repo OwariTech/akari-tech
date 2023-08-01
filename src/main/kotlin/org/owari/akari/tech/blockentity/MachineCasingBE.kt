@@ -16,7 +16,7 @@ import org.owari.akari.tech.inventory.SimpleInventory
 import org.owari.akari.tech.machine.MachineTier
 import org.owari.akari.tech.screen.SimpleScreenHandler
 
-class MachineCasingBE(pos: BlockPos, state: BlockState) : BlockEntity(BlockEntities.MACHINE_CASING_TYPE, pos, state), NamedScreenHandlerFactory {
+class MachineCasingBE(pos: BlockPos, state: BlockState) : BlockEntity(ATBlockEntities.MACHINE_CASING_TYPE, pos, state), NamedScreenHandlerFactory {
     constructor(pos: BlockPos, state: BlockState, initParts: DefaultedList<ItemStack>) : this(pos, state) {
         parts = initParts
     }

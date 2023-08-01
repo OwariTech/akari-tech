@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "akari-tech:block/machine_casing",
+    "front": "akari-tech:block/machine_burning_box_off",
+    "side": "akari-tech:block/machine_casing"
+  }
+}

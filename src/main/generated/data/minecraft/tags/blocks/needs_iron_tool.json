@@ -13,6 +13,8 @@
     "akari-tech:ore_ruby",
     "akari-tech:ore_antimony",
     "akari-tech:ore_lithium",
-    "akari-tech:ore_uranium"
+    "akari-tech:ore_uranium",
+    "akari-tech:machine_casing",
+    "akari-tech:machine_burning_box"
   ]
 }

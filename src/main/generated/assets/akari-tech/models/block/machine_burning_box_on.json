@@ -2,7 +2,7 @@
   "parent": "minecraft:block/orientable",
   "textures": {
     "top": "akari-tech:block/machine_casing",
-    "front": "akari-tech:block/machine_burning_box",
+    "front": "akari-tech:block/machine_burning_box_on",
     "side": "akari-tech:block/machine_casing"
   }
 }

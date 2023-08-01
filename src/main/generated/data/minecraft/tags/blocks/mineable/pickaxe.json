@@ -25,6 +25,8 @@
     "akari-tech:ore_aluminium",
     "akari-tech:ore_anthracite",
     "akari-tech:ore_salt",
-    "akari-tech:ore_rock_salt"
+    "akari-tech:ore_rock_salt",
+    "akari-tech:machine_casing",
+    "akari-tech:machine_burning_box"
   ]
 }
